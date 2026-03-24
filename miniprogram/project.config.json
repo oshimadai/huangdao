@@ -1,0 +1,13 @@
+{
+  "description": "荒岛生存微信小程序",
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.3.4",
+  "appid": "wx0000000000000000",
+  "projectname": "huangdao-miniprogram",
+  "condition": {}
+}

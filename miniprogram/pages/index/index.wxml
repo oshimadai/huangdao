@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🏝️ 荒岛生存</text>
+    <text class="subtitle">漂流 · 战斗 · 交易 · 远航</text>
+  </view>
+
+  <view class="card player-info">
+    <view class="player-row">
+      <text class="player-name">👤 {{playerName}}</text>
+      <text class="player-stage">阶段 {{playerStage}}</text>
+    </view>
+    <view class="stats-row">
+      <text class="stat">❤️ {{playerHp}}/{{playerMaxHp}}</text>
+      <text class="stat">💰 {{playerGold}}</text>
+      <text class="stat">📦 {{inventoryCount}}/{{inventoryMax}}</text>
+    </view>
+  </view>
+
+  <view class="menu">
+    <button class="btn btn-menu" bindtap="goToDrift">🌊 漂流</button>
+    <button class="btn btn-menu" bindtap="goToBattle">⚔️ 战斗</button>
+    <button class="btn btn-menu" bindtap="goToVoyage">🏴‍☠️ 远航</button>
+  </view>
+</view>
