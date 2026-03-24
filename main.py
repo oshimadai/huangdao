@@ -19,6 +19,10 @@ from combat import (
     simulate_combat, CombatResult
 )
 from economy import EconomySystem
+from voyage import (
+    VoyageSystem, ShipwreckTier, MirrorGuard, Shipwreck,
+    print_shipwreck_status
+)
 
 
 class GameDemo:
@@ -27,6 +31,7 @@ class GameDemo:
     def __init__(self):
         self.driftbox_system = DriftBoxSystem()
         self.economy = EconomySystem()
+        self.voyage_system = VoyageSystem()
         self.players: Dict[str, PlayerData] = {}
     
     def create_player(self, player_id: str, stage: int = 1):
@@ -137,6 +142,70 @@ class GameDemo:
         else:
             print("✗ 交易失败（库存不足）")
     
+    def run_voyage_phase(self):
+        """远航阶段 - 沉船争夺"""
+        print(f"\n{'='*60}")
+        print("【远航阶段】深渊沉船争夺战")
+        print(f"{'='*60}")
+        
+        # 创建沉船
+        self.voyage_system.create_shipwreck("T3_深渊_001", ShipwreckTier.T3, 500, 600)
+        self.voyage_system.create_shipwreck("T2_深海_001", ShipwreckTier.T2, 300, 400)
+        
+        # T3 大佬占领深渊沉船
+        boss_t3 = MirrorGuard(
+            player_id="玩家 C",
+            role="boss",
+            weapon_durability=150,
+            weapon_max_durability=150,
+            armor_durability=150,
+            armor_max_durability=150,
+            fight_style="burst",
+        )
+        self.voyage_system.occupy_shipwreck("T3_深渊_001", boss_t3, [])
+        
+        print("\n沉船状态:")
+        for wreck in self.voyage_system.shipwrecks.values():
+            print_shipwreck_status(wreck)
+        
+        # T1 玩家挑战 T3 大佬（非对称战争）
+        print(f"\n【挑战】呆汪 (T1) → 玩家 C (T3)")
+        
+        challenger = MirrorGuard(
+            player_id="呆汪",
+            role="boss",
+            weapon_durability=80,
+            weapon_max_durability=80,
+            armor_durability=80,
+            armor_max_durability=80,
+            fight_style="defense",
+        )
+        
+        result = self.voyage_system.challenge_shipwreck(
+            "T3_深渊_001", 
+            challenger, 
+            attacker_tier=1, 
+            defender_tier=3
+        )
+        
+        if result:
+            print(f"\n战斗结果：{result.winner_id} 获胜")
+            print(f"呆汪刮痧成功：{'✅ 是' if result.t1_success else '❌ 否'}")
+            print(f"T3 大佬经济损失：{result.economic_damage:,} 💰")
+            print(f"\n💡 即使战败，T1 玩家通过触发 T3 高溢价修复实现'经济剥蚀'")
+    
+    def print_voyage_report(self):
+        """打印远航报告"""
+        print(f"\n{'='*60}")
+        print("【远航统计】")
+        print(f"{'='*60}")
+        
+        stats = self.voyage_system.get_battle_statistics()
+        print(f"总战斗数：{stats.get('total_battles', 0)}")
+        print(f"T1 刮痧成功：{stats.get('t1_success_count', 0)}")
+        print(f"T1 成功率：{stats.get('t1_success_rate', 0)*100:.1f}%")
+        print(f"T3 累计经济损失：{stats.get('total_economic_damage', 0):,}")
+    
     def print_economy_report(self):
         """打印经济报告"""
         report = self.economy.generate_report()
@@ -232,6 +301,10 @@ def run_demo():
     game.run_trade_phase("玩家 B", "呆汪", "wood_basic", 20)
     game.run_trade_phase("呆汪", "玩家 C", "metal_iron", 5)
     
+    # 远航阶段
+    print("\n\n【阶段 6: 远航 - 沉船争夺】")
+    game.run_voyage_phase()
+    
     # 最终状态
     print("\n\n【最终状态】")
     game.print_all_players()
@@ -239,6 +312,10 @@ def run_demo():
     # 经济报告
     print("\n\n")
     game.print_economy_report()
+    
+    # 远航报告
+    print("\n\n")
+    game.print_voyage_report()
     
     print("\n" + "="*60)
     print("✅ Demo 完成")
