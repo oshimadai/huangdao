@@ -1,47 +1,14 @@
-.header { padding: 40rpx 20rpx; text-align: center; }
-.title {
-  display: block;
-  font-size: 48rpx;
-  font-weight: bold;
-  color: #ffd700;
-  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.5);
-  margin-bottom: 10rpx;
-}
-.subtitle {
-  display: block;
-  font-size: 28rpx;
-  color: #90caf9;
-}
-.player-info {
-  background: linear-gradient(135deg, #2d5a3d 0%, #1a472a 100%);
-  color: white;
-}
-.player-row {
+.test-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20rpx;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff;
+  padding: 40rpx;
 }
-.player-name { font-size: 36rpx; font-weight: bold; }
-.player-stage {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8rpx 16rpx;
-  border-radius: 20rpx;
-  font-size: 24rpx;
-}
-.stats-row {
-  display: flex;
-  justify-content: space-around;
-}
-.stat {
-  font-size: 28rpx;
-  padding: 10rpx 20rpx;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12rpx;
-}
-.menu { padding: 20rpx; }
-.btn-menu {
-  width: 100%;
-  padding: 30rpx 20rpx;
-  margin: 15rpx 0;
+.test-text {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 40rpx;
 }
