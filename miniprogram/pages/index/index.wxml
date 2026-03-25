@@ -1,7 +1,6 @@
-<view class="container">
-  <view class="content">
-    <text class="title">✅ 渲染成功！</text>
-    <text class="subtitle">如果能看到这行字，说明 WXML 渲染正常</text>
-    <button class="btn" bindtap="onTap">点击测试</button>
-  </view>
+<view style="background-color: #ff0000; padding: 50px;">
+  <text style="color: #ffffff; font-size: 40px;">红色背景测试</text>
+</view>
+<view style="background-color: #ffffff; padding: 50px; margin-top: 20px;">
+  <text style="color: #000000; font-size: 30px;">白色背景文字</text>
 </view>
