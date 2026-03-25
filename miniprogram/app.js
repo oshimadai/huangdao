@@ -1,12 +1,11 @@
-// 极简测试版 app.js
 App({
-  onLaunch: function () {
-    console.log('App Launch!!!')
+  onLaunch: function() {
+    console.log('App Launch OK!')
   },
-  onShow: function () {
-    console.log('App Show!!!')
+  onShow: function() {
+    console.log('App Show OK!')
   },
   globalData: {
-    test: 'hello'
+    userInfo: null
   }
 })

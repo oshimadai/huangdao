@@ -1,10 +1,15 @@
-// 极简测试页面
 Page({
-  onLoad: function () {
-    console.log('Page Load!!!')
+  onLoad: function() {
+    console.log('Page Load OK!')
   },
-  tap: function () {
-    console.log('Tap!!!')
-    wx.showToast({ title: '成功', icon: 'success' })
+  onShow: function() {
+    console.log('Page Show OK!')
+  },
+  onTap: function() {
+    console.log('Button Tap OK!')
+    wx.showToast({
+      title: '点击成功',
+      icon: 'success'
+    })
   }
 })

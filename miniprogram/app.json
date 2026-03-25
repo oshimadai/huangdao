@@ -3,10 +3,10 @@
     "pages/index/index"
   ],
   "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#1a472a",
-    "navigationBarTitleText": "荒岛生存",
-    "navigationBarTextStyle": "white"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "荒岛测试",
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

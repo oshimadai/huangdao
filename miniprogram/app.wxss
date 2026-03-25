@@ -1,1 +1,4 @@
-page { background: white; }
+page {
+  background-color: #ffffff;
+  height: 100%;
+}

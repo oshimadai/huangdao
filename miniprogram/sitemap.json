@@ -1,7 +1,1 @@
-{
-  "description": "关于 sitemap 的说明",
-  "rules": [{
-    "action": "allow",
-    "page": "*"
-  }]
-}
+{}
