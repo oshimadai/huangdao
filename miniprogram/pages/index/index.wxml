@@ -1,5 +1,7 @@
-<view style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#ffffff;">
-  <text style="font-size:32px;color:#ff0000;font-weight:bold;margin-bottom:20px;">✅ 渲染成功！</text>
-  <text style="font-size:16px;color:#333;margin-bottom:30px;">如果能看到这行字，说明 WXML 渲染正常</text>
-  <button type="warn" bindtap="onTap" style="font-size:18px;padding:10px 40px;">点击测试</button>
+<view class="container">
+  <view class="content">
+    <text class="title">✅ 渲染成功！</text>
+    <text class="subtitle">如果能看到这行字，说明 WXML 渲染正常</text>
+    <button class="btn" bindtap="onTap">点击测试</button>
+  </view>
 </view>
