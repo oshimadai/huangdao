@@ -1,9 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/game/game",
-    "pages/battle/battle",
-    "pages/voyage/voyage"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
