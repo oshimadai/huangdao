@@ -1,7 +1,5 @@
-<!-- 荒岛生存小程序 - 测试页面 -->
-<view style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f0f0f0; padding: 40rpx;">
-  <text style="font-size: 36rpx; color: #333; margin-bottom: 30rpx; font-weight: bold;">🏝️ 荒岛生存</text>
-  <text style="font-size: 28rpx; color: #666; margin-bottom: 50rpx;">测试页面加载中...</text>
-  <button style="background: #4CAF50; color: white; border: none; border-radius: 8rpx; padding: 20rpx 60rpx; font-size: 32rpx;" bindtap="testTap">点击测试</button>
-  <text style="font-size: 24rpx; color: #999; margin-top: 30rpx;">如果能看到按钮，说明渲染正常</text>
+<!-- 极简测试页面 -->
+<view style="padding: 50rpx;">
+  <text style="font-size: 40rpx; color: red; font-weight: bold;">能看到这行字吗？</text>
+  <button bindtap="tap">点我</button>
 </view>

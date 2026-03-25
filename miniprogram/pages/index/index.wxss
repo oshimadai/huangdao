@@ -1,14 +1,1 @@
-.test-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #fff;
-  padding: 40rpx;
-}
-.test-text {
-  font-size: 32rpx;
-  color: #333;
-  margin-bottom: 40rpx;
-}
+page { background: white; }
